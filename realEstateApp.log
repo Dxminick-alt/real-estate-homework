@@ -1,0 +1,49 @@
+[2025-11-02 19:24:06] [INFO   ] Logging initialized successfully 
+[2025-11-02 19:24:06] [INFO   ] Starting Real Estate Management System 
+[2025-11-02 19:24:06] [INFO   ] Creating new PropertyService instance with default constructor 
+[2025-11-02 19:24:06] [INFO   ] Adding sample properties 
+[2025-11-02 19:24:06] [INFO   ] Creating new Property instance with id: 1 
+[2025-11-02 19:24:06] [INFO   ] Creating new Property instance with id: 2 
+[2025-11-02 19:24:06] [INFO   ] Creating new Property instance with id: 3 
+[2025-11-02 19:24:06] [INFO   ] Getting property id: 1 
+[2025-11-02 19:24:06] [INFO   ] Adding property with id: 1 
+[2025-11-02 19:24:06] [INFO   ] Property added successfully 
+[2025-11-02 19:24:06] [INFO   ] Getting property id: 2 
+[2025-11-02 19:24:06] [INFO   ] Adding property with id: 2 
+[2025-11-02 19:24:06] [INFO   ] Property added successfully 
+[2025-11-02 19:24:06] [INFO   ] Getting property id: 3 
+[2025-11-02 19:24:06] [INFO   ] Adding property with id: 3 
+[2025-11-02 19:24:06] [INFO   ] Property added successfully 
+[2025-11-02 19:24:06] [INFO   ] Sample properties added successfully 
+[2025-11-02 19:24:06] [INFO   ] Demonstrating property service functionality 
+[2025-11-02 19:24:06] [INFO   ] Getting all properties, count: 3 
+[2025-11-02 19:24:06] [INFO   ] Properties retrieved successfully 
+[2025-11-02 19:24:06] [INFO   ] Total properties: 3 
+[2025-11-02 19:24:06] [INFO   ] Filtering available properties 
+[2025-11-02 19:24:06] [INFO   ] Checking property availability: true 
+[2025-11-02 19:24:06] [INFO   ] Checking property availability: true 
+[2025-11-02 19:24:06] [INFO   ] Checking property availability: false 
+[2025-11-02 19:24:06] [INFO   ] Found 2 available properties 
+[2025-11-02 19:24:06] [INFO   ] Available properties: 2 
+[2025-11-02 19:24:06] [INFO   ] Filtering properties by type: HOUSE 
+[2025-11-02 19:24:06] [INFO   ] Getting property type: HOUSE 
+[2025-11-02 19:24:06] [INFO   ] Getting property type: APARTMENT 
+[2025-11-02 19:24:06] [INFO   ] Getting property type: CONDO 
+[2025-11-02 19:24:06] [INFO   ] Found 1 properties of type HOUSE 
+[2025-11-02 19:24:06] [INFO   ] Houses: 1 
+[2025-11-02 19:24:06] [INFO   ] Calculating average price of 3 properties 
+[2025-11-02 19:24:06] [INFO   ] Getting property price: 500000 
+[2025-11-02 19:24:06] [INFO   ] Getting property price: 250000 
+[2025-11-02 19:24:06] [INFO   ] Getting property price: 350000 
+[2025-11-02 19:24:06] [INFO   ] Average price calculated: 366666.6666666667 
+[2025-11-02 19:24:06] [INFO   ] Average price: 366666.6666666667 
+[2025-11-02 19:24:06] [INFO   ] Finding most expensive property among 3 properties 
+[2025-11-02 19:24:06] [INFO   ] Getting property price: 500000 
+[2025-11-02 19:24:06] [INFO   ] Getting property price: 250000 
+[2025-11-02 19:24:06] [INFO   ] Getting property price: 500000 
+[2025-11-02 19:24:06] [INFO   ] Getting property price: 350000 
+[2025-11-02 19:24:06] [INFO   ] Getting property id: 1 
+[2025-11-02 19:24:06] [INFO   ] Most expensive property found with id: 1 
+[2025-11-02 19:24:06] [INFO   ] Getting property id: 1 
+[2025-11-02 19:24:06] [INFO   ] Most expensive property ID: 1 
+[2025-11-02 19:24:06] [INFO   ] Real Estate Management System finished successfully 

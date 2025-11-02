@@ -9,6 +9,10 @@ import java.util.List;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
 
+/**
+ * Unit test class for the PropertyService class.
+ * This class contains comprehensive tests for all methods in the PropertyService class.
+ */
 public class PropertyServiceTest {
     
     private PropertyService propertyService;
@@ -16,6 +20,10 @@ public class PropertyServiceTest {
     private Property property2;
     private Property property3;
     
+    /**
+     * Sets up the test environment before each test method.
+     * Creates a new PropertyService instance and sample properties for testing.
+     */
     @Before
     public void setUp() {
         propertyService = new PropertyService();
@@ -32,6 +40,10 @@ public class PropertyServiceTest {
         propertyService.addProperty(property3);
     }
     
+    /**
+     * Tests the getAvailableProperties method.
+     * Verifies that only available properties are returned.
+     */
     @Test
     public void testGetAvailableProperties() {
         List<Property> availableProperties = propertyService.getAvailableProperties();
@@ -40,6 +52,10 @@ public class PropertyServiceTest {
         assertThat(availableProperties, containsInAnyOrder(property1, property2));
     }
     
+    /**
+     * Tests the getPropertiesByType method.
+     * Verifies that properties are correctly filtered by type.
+     */
     @Test
     public void testGetPropertiesByType() {
         List<Property> houses = propertyService.getPropertiesByType(PropertyType.HOUSE);
@@ -48,6 +64,10 @@ public class PropertyServiceTest {
         assertThat(houses.get(0), equalTo(property1));
     }
     
+    /**
+     * Tests the getPropertiesByPriceRange method.
+     * Verifies that properties are correctly filtered by price range.
+     */
     @Test
     public void testGetPropertiesByPriceRange() {
         List<Property> affordableProperties = propertyService.getPropertiesByPriceRange(
@@ -57,6 +77,10 @@ public class PropertyServiceTest {
         assertThat(affordableProperties, containsInAnyOrder(property2, property3));
     }
     
+    /**
+     * Tests the getPropertiesByBedrooms method.
+     * Verifies that properties are correctly filtered by number of bedrooms.
+     */
     @Test
     public void testGetPropertiesByBedrooms() {
         List<Property> threeBedroomProperties = propertyService.getPropertiesByBedrooms(3);
@@ -65,6 +89,10 @@ public class PropertyServiceTest {
         assertThat(threeBedroomProperties.get(0), equalTo(property3));
     }
     
+    /**
+     * Tests the getAveragePrice method.
+     * Verifies that the average price is calculated correctly.
+     */
     @Test
     public void testGetAveragePrice() {
         BigDecimal averagePrice = propertyService.getAveragePrice();
@@ -74,6 +102,10 @@ public class PropertyServiceTest {
                 comparesEqualTo(expectedAverage));
     }
     
+    /**
+     * Tests the findMostExpensiveProperty method.
+     * Verifies that the most expensive property is correctly identified.
+     */
     @Test
     public void testFindMostExpensiveProperty() {
         Property mostExpensive = propertyService.findMostExpensiveProperty();
@@ -82,6 +114,10 @@ public class PropertyServiceTest {
         assertThat(mostExpensive.getPrice(), comparesEqualTo(new BigDecimal("500000")));
     }
     
+    /**
+     * Tests the countPropertiesByType method.
+     * Verifies that properties are correctly counted by type.
+     */
     @Test
     public void testCountPropertiesByType() {
         long houseCount = propertyService.countPropertiesByType(PropertyType.HOUSE);
@@ -91,5 +127,50 @@ public class PropertyServiceTest {
         assertThat(houseCount, is(1L));
         assertThat(apartmentCount, is(1L));
         assertThat(condoCount, is(1L));
+    }
+    
+    /**
+     * Tests the addProperty method with a null property.
+     * Verifies that an IllegalArgumentException is thrown.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testAddPropertyWithNull() {
+        propertyService.addProperty(null);
+    }
+    
+    /**
+     * Tests the getPropertiesByType method with a null type.
+     * Verifies that an IllegalArgumentException is thrown.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetPropertiesByTypeWithNull() {
+        propertyService.getPropertiesByType(null);
+    }
+    
+    /**
+     * Tests the getPropertiesByPriceRange method with null prices.
+     * Verifies that an IllegalArgumentException is thrown.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetPropertiesByPriceRangeWithNull() {
+        propertyService.getPropertiesByPriceRange(null, new BigDecimal("100000"));
+    }
+    
+    /**
+     * Tests the getPropertiesByPriceRange method with invalid range.
+     * Verifies that an IllegalArgumentException is thrown when minPrice > maxPrice.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testGetPropertiesByPriceRangeWithInvalidRange() {
+        propertyService.getPropertiesByPriceRange(new BigDecimal("200000"), new BigDecimal("100000"));
+    }
+    
+    /**
+     * Tests the countPropertiesByType method with a null type.
+     * Verifies that an IllegalArgumentException is thrown.
+     */
+    @Test(expected = IllegalArgumentException.class)
+    public void testCountPropertiesByTypeWithNull() {
+        propertyService.countPropertiesByType(null);
     }
 }
